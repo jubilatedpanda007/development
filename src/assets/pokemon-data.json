@@ -1,0 +1,211 @@
+[
+  {
+    "name": "Bulbasaur",
+    "number": "001",
+    "types": [
+      "grass",
+      "poison"
+    ],
+    "evolution": "base",
+    "hp": 45,
+    "attack": 49,
+    "image": "images/bulbasaur.png"
+  },
+  {
+    "name": "Ivysaur",
+    "number": "002",
+    "types": [
+      "grass",
+      "poison"
+    ],
+    "evolution": "middle",
+    "hp": 60,
+    "attack": 62,
+    "image": "images/ivysaur.png"
+  },
+  {
+    "name": "Venusaur",
+    "number": "003",
+    "types": [
+      "grass",
+      "poison"
+    ],
+    "evolution": "final",
+    "hp": 80,
+    "attack": 82,
+    "image": "images/venusaur.png"
+  },
+  {
+    "name": "Charmander",
+    "number": "004",
+    "types": [
+      "fire"
+    ],
+    "evolution": "base",  
+    "hp": 39,
+    "attack": 52,
+    "image": "images/charmander.png"
+  },
+  {
+    "name": "Charmeleon",
+    "number": "005",
+    "types": [
+      "fire"
+    ],
+    "evolution": "middle",
+    "hp": 58,
+    "attack": 64,
+    "image": "images/charmeleon.png"
+  },
+  {
+    "name": "Charizard",
+    "number": "006",
+    "types": [
+      "fire",
+      "flying"
+    ],
+    "evolution": "final",
+    "hp": 78,
+    "attack": 84,
+    "image": "images/charizard.png"
+  },
+  {
+    "name": "Squirtle",
+    "number": "007",
+    "types": [
+      "water"
+    ],
+    "evolution": "base",
+    "hp": 44,
+    "attack": 48,
+    "image": "images/squirtle.png"
+  },
+  {
+    "name": "Wartortle",
+    "number": "008",
+    "types": [
+      "water"
+    ],
+    "evolution": "middle",
+    "hp": 59,
+    "attack": 63,
+    "image": "images/wartortle.png"
+  },
+  {
+    "name": "Blastoise",
+    "number": "009",
+    "types": [
+      "water"
+    ],
+    "evolution": "final",
+    "hp": 79,
+    "attack": 83,
+    "image": "images/blastoise.png"
+  },
+  {
+    "name": "Caterpie",
+    "number": "010",
+    "types": [
+      "bug"
+    ],
+    "evolution": "base",
+    "hp": 45,
+    "attack": 30,
+    "image": "images/caterpie.png"
+  },
+  {
+    "name": "Metapod",
+    "number": "011",
+    "types": [
+      "bug"
+    ],
+    "evolution": "middle",
+    "hp": 50,
+    "attack": 20,
+    "image": "images/metapod.png"
+  },
+  {
+    "name": "Butterfree",
+    "number": "012",
+    "types": [
+      "bug",
+      "flying"
+    ],
+    "evolution": "final",
+    "hp": 60,
+    "attack": 45,
+    "image": "images/butterfree.png"
+  },
+  {
+    "name": "Weedle",
+    "number": "013",
+    "types": [
+      "bug",
+      "poison"
+    ],
+    "evolution": "base",
+    "hp": 40,
+    "attack": 35,
+    "image": "images/weedle.png"
+  },
+  {
+    "name": "Kakuna",
+    "number": "014",
+    "types": [
+      "bug",
+      "poison"
+    ],
+    "evolution": "middle",
+    "hp": 45,
+    "attack": 25,
+    "image": "images/kakuna.png"
+  },
+  {
+    "name": "Beedrill",
+    "number": "015",
+    "types": [
+      "bug",
+      "poison"
+    ],
+    "evolution": "final",
+    "hp": 65,
+    "attack": 90,
+    "image": "images/beedrill.png"
+  },
+  {
+    "name": "Pidgey",
+    "number": "016",
+    "types": [
+      "normal",
+      "flying"
+    ],
+    "evolution": "base",
+    "hp": 40,
+    "attack": 45,
+    "image": "images/pidgey.png"
+  },
+  {
+    "name": "Pidgeotto",
+    "number": "017",
+    "types": [
+      "normal",
+      "flying"
+    ],
+    "evolution": "middle",
+    "hp": 63,
+    "attack": 60,
+    "image": "images/pidgeotto.png"
+  },
+  {
+    "name": "Pidgeot",
+    "number": "018",
+    "types": [
+      "normal",
+      "flying"
+    ],
+    "evolution": "final",
+    "hp": 83,
+    "attack": 80,
+    "image": "images/pidgeot.png"
+  }
+]
