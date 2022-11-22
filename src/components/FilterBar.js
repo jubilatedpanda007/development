@@ -18,51 +18,53 @@ const theme = createTheme({
     },
 });
 
-export default function FilterBar(props) {
+// as props, takes in type, evolution
+export default function FilterBar({type, setType, evolution, setEvolution, sort, setSort}) {
 
-    const [state, setState] = React.useState({
-        grass: false,
-        poison: false,
-        fire: false,
-        flying: false,
-        water: false,
-        bug: false,
-        normal: false,
-    });
+    // const [state, setState] = React.useState({
+    //     grass: false,
+    //     poison: false,
+    //     fire: false,
+    //     flying: false,
+    //     water: false,
+    //     bug: false,
+    //     normal: false,
+    // });
 
-    const evolutions = [
-        {
-            value: 'base',
-            label: 'Base',
-        },
-        {
-            value: 'middle',
-            label: 'Middle',
-        },
-        {
-            value: 'final',
-            label: 'Final',
-        },
-    ];
 
-    const [evolution, setEvolution] = React.useState('base');
+    // create same state for evolution stage
+    // const [evolution, setEvolution] = React.useState({
+    //     base: false,
+    //     middle: false,
+    //     final: false,
+    // });
+
+    // const [evolution, setEvolution] = React.useState("base");
 
     const handleChange = (event) => {
-        setState({ ...state, [event.target.name]: event.target.checked });
+        setType(event.target.value);
     };
 
-    const { grass, poison, fire, flying, water, bug, normal } = state;
-    
-    // filter based on base, middle, final evolution
     const handleEvolutionChange = (event) => {
         setEvolution(event.target.value);
     };
 
-    const error = [grass, poison, fire, flying, water, bug, normal].filter(
-        (v) => v
-    ).length !== 2;
 
-    const [sort, setSort] = React.useState("hp");
+    // const handleChange = (event) => {
+    //     setState({ ...state, [event.target.name]: event.target.checked });
+    // };
+
+    // const { grass, poison, fire, flying, water, bug, normal } = state;
+    // const { base, middle, final } = evolution;
+    
+    // // filter based on base, middle, final evolution
+    // const handleEvolutionChange = (event) => {
+    //     setEvolution({ ...evolution, [event.target.name]: event.target.checked });
+    // };
+
+    // const error = [grass, poison, fire, flying, water, bug, normal].filter(
+    //     (v) => v
+    // ).length !== 2;
 
     const handleSortChange = (event) => {
         setSort(event.target.value);
@@ -72,8 +74,8 @@ export default function FilterBar(props) {
         <Card>
             <CardHeader title="PokéSearch" />
             <CardContent>
-                <FormControl component="fieldset">
-                    <FormLabel component="legend">Filter</FormLabel>
+                {/* <FormControl component="fieldset">
+                    <FormLabel component="legend">Type</FormLabel>
                     <FormControlLabel
                         control={
                             <Checkbox
@@ -151,14 +153,32 @@ export default function FilterBar(props) {
                         }
                         label="Normal"
                     />
+                </FormControl> */}
+                <FormControl component="fieldset">
+                    <FormLabel component="legend">Type</FormLabel>
+                    <RadioGroup
+                        aria-label="type"
+                        name="type"
+                        value={type}
+                        onChange={handleChange}
+                    >
+                        <FormControlLabel value="all" control={<Radio />} label="All" />
+                        <FormControlLabel value="grass" control={<Radio />} label="Grass" />
+                        <FormControlLabel value="poison" control={<Radio />} label="Poison" />
+                        <FormControlLabel value="fire" control={<Radio />} label="Fire" />
+                        <FormControlLabel value="flying" control={<Radio />} label="Flying" />
+                        <FormControlLabel value="water" control={<Radio />} label="Water" />
+                        <FormControlLabel value="bug" control={<Radio />} label="Bug" />
+                        <FormControlLabel value="normal" control={<Radio />} label="Normal" />
+                    </RadioGroup>
                 </FormControl>
                 {/* filter based on evolution, base middle, final using Checkboxes */}
-                <FormControl component="fieldset">
+                {/* <FormControl component="fieldset">
                     <FormLabel component="legend">Evolution</FormLabel>
                     <FormControlLabel
                         control={
                             <Checkbox
-                                checked={evolution === 'base'}
+                                checked={base}
                                 onChange={handleEvolutionChange}
                                 name="base"
                                 color="primary"
@@ -169,7 +189,7 @@ export default function FilterBar(props) {
                     <FormControlLabel
                         control={
                             <Checkbox
-                                checked={evolution === 'middle'}
+                                checked={middle}
                                 onChange={handleEvolutionChange}
                                 name="middle"
                                 color="primary"
@@ -180,7 +200,7 @@ export default function FilterBar(props) {
                     <FormControlLabel
                         control={
                             <Checkbox
-                                checked={evolution === 'final'}
+                                checked={final}
                                 onChange={handleEvolutionChange}
                                 name="final"
                                 color="primary"
@@ -188,7 +208,22 @@ export default function FilterBar(props) {
                         }
                         label="Final"
                     />
+                </FormControl> */}
+                <FormControl component="fieldset">
+                    <FormLabel component="legend">Evolution</FormLabel>
+                    <RadioGroup
+                        aria-label="evolution"
+                        name="evolution"
+                        value={evolution}
+                        onChange={handleEvolutionChange}
+                    >
+                        <FormControlLabel value="all" control={<Radio />} label="All" />
+                        <FormControlLabel value="base" control={<Radio />} label="Base" />
+                        <FormControlLabel value="middle" control={<Radio />} label="Middle" />
+                        <FormControlLabel value="final" control={<Radio />} label="Final" />
+                    </RadioGroup>
                 </FormControl>
+
                 <FormControl
                     component="fieldset"
                 >
@@ -200,9 +235,9 @@ export default function FilterBar(props) {
                         onChange={handleSortChange}
                     >
                         <FormControlLabel 
-                            value="all" 
+                            value="number" 
                             control={<Radio />} 
-                            label="All" 
+                            label="Number" 
                         />
                         <FormControlLabel
                             value="hp"
@@ -216,16 +251,14 @@ export default function FilterBar(props) {
                         />
                     </RadioGroup>
                 </FormControl>
-            </CardContent>
-            <CardActions>
                 {/* Create another form control labelled "Other" with checkbox to view "Team" */}
                 <FormControl component="fieldset">
                     <FormLabel component="legend">Other</FormLabel>
                     <FormControlLabel
                         control={
                             <Checkbox
-                                checked={props.team}
-                                onChange={props.handleTeamChange}
+                                checked={false}
+                                onChange={() => {}}
                                 name="team"
                                 color="primary"
                             />
@@ -233,6 +266,21 @@ export default function FilterBar(props) {
                         label="Team"
                     />
                 </FormControl>
+            </CardContent>
+            <CardActions>
+                    {/* button that resets values, type set to "all", evolution set to "all", sort set to "number" */}
+                <Button
+                    variant="contained"
+                    color="primary"
+                    onClick={() => {
+                        setType("all");
+                        setEvolution("all");
+                        setSort("number");
+                    }}
+                >
+                    Reset
+                </Button>
+        
             </CardActions>
         </Card>
     );
