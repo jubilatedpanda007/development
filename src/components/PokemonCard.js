@@ -1,17 +1,13 @@
-// TODO: create a component that displays a single bakery item
 import "../App.css";
-// create PokemonCard component using MUI Card, is in dark mode
-// Display Pokemon Image, Name, Number, HP, Attack, Types
-// Make Types chips, and adequate color for each type
-// grass --> green, poison --> purple, fire --> red, water --> blue, bug --> yellow, normal --> grey, flying --> light blue
-// Add button to "Add to Team" with a pokeball icon (CgPokemon)
-// This button is a toggle button, if clicked, it will add the pokemon to the team, if clicked again, it will remove the pokemon from the team
-// The team is represented as a list of pokemon names, used to display the Pokemon's Image and Total the team's HP and Attack
-// MUI 5
-import React from "react";
+import React, { useEffect } from "react";
 import { Card, CardContent, CardMedia, CardActions, Chip, Typography } from '@mui/material';
 import { useState } from 'react';
 import { CgPokemon } from 'react-icons/cg';
+import {IoIosWater} from 'react-icons/io'
+import {GiHighGrass} from 'react-icons/gi';
+import {MdBubbleChart} from 'react-icons/md';
+import {AiFillFire, AiFillBug, AiFillStar} from 'react-icons/ai';
+import { MdOutlineCatchingPokemon } from 'react-icons/md';
 import { red, green, blue, purple, yellow, grey, lightBlue } from '@mui/material/colors';
 import { Button } from '@mui/material';
 import { Box } from '@mui/system';
@@ -19,39 +15,19 @@ import { createTheme, useTheme } from '@mui/material/styles';
 import useMediaQuery from '@mui/material/useMediaQuery';
 
 
-// const theme = createTheme({
-//     palette: {
-//         primary: {
-//             main: red[500],
-//         },
-//         secondary: {
-//             main: green[500],
-//         },
-//         error: {
-//             main: blue[500],
-//         },
-//         warning: {
-//             main: purple[500],
-//         },
-//         info: {
-//             main: yellow[500],
-//         },
-//         success: {
-//             main: grey[500],
-//         },
-//         light: {
-//             main: lightBlue[500],
-//         },
-//     },
-// });
-
 function PokemonCard(props) {
-    // const theme = useTheme();
 
-    const handleAddToTeam = () => {
-        
-    };
+    // takes in a togglePokemon function, which will add or remove the pokemon from the team
+    // check if pokemon is in team, if it is, set the button to "Remove from Team", if not, set the button to "Add to Team"
+    // team is passed in as a list of pokemon names
+    const [isInTeam, setIsInTeam] = useState(props.team.includes(props.name));
 
+    // on each re-render, check if pokemon is in team, if it is, set the button to "Remove from Team", if not, set the button to "Add to Team"
+    // team is passed in as a list of pokemon names
+    useEffect(() => {
+        setIsInTeam(props.team.includes(props.pokemon));
+    }, [props.team, props.pokemon]);
+    
     return (
         // set card width to 320px, and height to 400px
         <Card sx={{ width: 320, height: 500, bgcolor: "grey.800", color: "white" }}>
@@ -67,16 +43,16 @@ function PokemonCard(props) {
                     {props.name}
                 </Typography>
                 <Typography variant="body2" color="text.secondary" color="white">
-                    Number: {props.number}
+                    <b>Number:</b> {props.number}
                 </Typography>
                 <Typography variant="body2" color="text.secondary" color="white">
-                    HP: {props.hp}
+                    <b>HP:</b> {props.hp}
                 </Typography>
                 <Typography variant="body2" color="text.secondary" color="white">
-                    Attack: {props.attack}
+                    <b>Attack:</b> {props.attack}
                 </Typography>
                 <Typography variant="body2" color="text.secondary" color="white">
-                    Types:
+                    <b>Types:</b>
                 </Typography>
                 {props.types.map((type) => {
                     if (type === 'grass') {
@@ -84,7 +60,8 @@ function PokemonCard(props) {
                             <Chip
                                 label={type}
                                 color="primary"
-                                variant="outlined"
+                                sx={{ bgcolor: green[500], margin: 0.5, textColor: "white" }}
+                                icon={<GiHighGrass />}
                                 size="small"
                             />
                         );
@@ -93,8 +70,10 @@ function PokemonCard(props) {
                             <Chip
                                 label={type}
                                 color="primary"
-                                variant="outlined"
+                                sx={{ bgcolor: purple[500], margin: 0.5, textColor: "white" }}
+                                icon={<MdBubbleChart />}
                                 size="small"
+                                // set text color to white
                             />
                         );
                     } else if (type === 'fire') {
@@ -102,7 +81,8 @@ function PokemonCard(props) {
                             <Chip
                                 label={type}
                                 color="primary"
-                                variant="outlined"
+                                sx={{ bgcolor: red[500], margin: 0.5, textColor: "white" }}
+                                icon={<AiFillFire />}
                                 size="small"
                             />
                         );
@@ -111,7 +91,8 @@ function PokemonCard(props) {
                             <Chip
                                 label={type}
                                 color="primary"
-                                variant="outlined"
+                                sx={{ bgcolor: blue[500], margin: 0.5, textColor: "white" }}
+                                icon={<IoIosWater />}
                                 size="small"
                             />
                         );
@@ -120,7 +101,8 @@ function PokemonCard(props) {
                             <Chip
                                 label={type}
                                 color="primary"
-                                variant="outlined"
+                                sx={{ bgcolor: yellow[800], margin: 0.5, textColor: "white" }}
+                                icon={<AiFillBug />}
                                 size="small"
                             />
                         );
@@ -129,7 +111,8 @@ function PokemonCard(props) {
                             <Chip
                                 label={type}
                                 color="primary"
-                                variant="outlined"
+                                sx={{ bgcolor: grey[600], margin: 0.5, textColor: "white" }}
+                                icon={<AiFillStar />}
                                 size="small"
                             />
                         );
@@ -137,14 +120,26 @@ function PokemonCard(props) {
                 })}
             </CardContent>
             <CardActions>
-                <Button
-                    variant="contained"
-                    color="primary"
-                    onClick={handleAddToTeam}
-                >
-                    {/* {isInTeam ? 'Remove from Team' : 'Add to Team'} */}
-                    Add to Team
-                </Button>
+                {/* if is in team, have blue button to add to team, if not, have red button to remove from team */}
+                {isInTeam ? (
+                    <Button
+                        variant="contained"
+                        color="error"
+                        startIcon={<MdOutlineCatchingPokemon />}
+                        onClick={() => props.togglePokemon(props.pokemon)}
+                    >
+                        Remove from Team
+                    </Button>
+                ) : (
+                    <Button
+                        variant="contained"
+                        color="primary"
+                        startIcon={<CgPokemon />}
+                        onClick={() => props.togglePokemon(props.pokemon)}
+                    >
+                        Add to Team
+                    </Button>
+                )}
             </CardActions>
         </Card>
     );

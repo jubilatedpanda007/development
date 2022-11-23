@@ -2,6 +2,7 @@ import "./App.css";
 import { useState } from "react";
 import pokemonData from "./assets/pokemon-data.json";
 import PokemonCard from "./components/PokemonCard";
+import Aggregator from "./components/Aggregator";
 import FilterBar from "./components/FilterBar";
 
 /* ####### DO NOT TOUCH -- this makes the image URLs work ####### */
@@ -13,8 +14,9 @@ pokemonData.forEach((item) => {
 function App() {
   // TODO: use useState to create a state variable to hold the state of the cart
   /* add your cart state code here */
-  const [cart, setCart] = useState(new Map());
-  const [total, setTotal] = useState(0);
+  const [team, setTeam] = useState([]);
+  const [attack, setAttack] = useState(0);
+  const [hp, setHp] = useState(0);
   // state used for filtering, types will be a set, and we 
   const [type, setType] = useState("all");
   // state for evolution filter
@@ -53,27 +55,34 @@ function App() {
     }
   });
 
-  const addToCart = (name, price) => {  
-    // create a new map to hold the new cart state
-    let newCart = new Map(cart);
-    // if the item is already in the cart, increment the count
-    if (newCart.has(name)) {
-      newCart.set(name, newCart.get(name) + 1);
+  const togglePokemon = (pokemon) => {  
+    // function adds pokemon object to team, and then updates the team's attack and hp
+    // if pokemon is already in team, remove it from team
+    // remove its attack and hp from the team's attack and hp
+    // if pokemon is not in team, add it to team
+    // add its attack and hp to the team's attack and hp
+    let newTeam = [...team];
+    let newAttack = attack;
+    let newHp = hp;
+    if (newTeam.includes(pokemon)) {
+      // remove pokemon from team
+      newTeam = newTeam.filter((item) => item !== pokemon);
+      newAttack -= parseInt(pokemon.attack);
+      newHp -= parseInt(pokemon.hp);
     } else {
-      // otherwise, add the item to the cart with a count of 1
-      newCart.set(name, 1);
+      // add pokemon to team
+      newTeam.push(pokemon);
+      newAttack += parseInt(pokemon.attack);
+      newHp += parseInt(pokemon.hp);
     }
-    console.log(newCart);
-    // set the cart state to the new cart
-    setCart(newCart);
-    // set the total cost of the cart
-    setTotal(total + price);
-  }
+    setTeam(newTeam);
+    setAttack(newAttack);
+    setHp(newHp);
+  };
 
   return (
     <div className="App">
       <div className="container">
-
       <div className="filter-bar-container">
         <FilterBar
           type={type}
@@ -82,6 +91,11 @@ function App() {
           setEvolution={setEvolution}
           sort={sort}
           setSort={setSort}
+        />
+        <Aggregator
+          team={team}
+          attack={attack}
+          hp={hp}
         />
       </div>
 
@@ -98,6 +112,8 @@ function App() {
                 attack={pokemon.attack}
                 hp={pokemon.hp}
                 types={pokemon.types}
+                team={team}
+                togglePokemon={togglePokemon}
               ></PokemonCard>
             ))}
           </div>

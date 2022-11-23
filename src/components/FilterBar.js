@@ -71,8 +71,8 @@ export default function FilterBar({type, setType, evolution, setEvolution, sort,
     };
 
     return (
-        <Card>
-            <CardHeader title="PokéSearch" />
+        <Card sx={{ width: 320, bgcolor: "grey.800", color: "white", margin: "auto", marginBottom: "20px" }}>
+            <CardHeader title="Pokébar" />
             <CardContent>
                 {/* <FormControl component="fieldset">
                     <FormLabel component="legend">Type</FormLabel>
@@ -155,7 +155,8 @@ export default function FilterBar({type, setType, evolution, setEvolution, sort,
                     />
                 </FormControl> */}
                 <FormControl component="fieldset">
-                    <FormLabel component="legend">Type</FormLabel>
+                    {/* Make Label White */}
+                    <FormLabel component="legend" sx={{ color: "white", fontWeight: "bold" }}>Type</FormLabel>
                     <RadioGroup
                         aria-label="type"
                         name="type"
@@ -210,7 +211,7 @@ export default function FilterBar({type, setType, evolution, setEvolution, sort,
                     />
                 </FormControl> */}
                 <FormControl component="fieldset">
-                    <FormLabel component="legend">Evolution</FormLabel>
+                    <FormLabel sx={{ color: "white", fontWeight: "bold" }} component="legend">Evolution</FormLabel>
                     <RadioGroup
                         aria-label="evolution"
                         name="evolution"
@@ -227,7 +228,7 @@ export default function FilterBar({type, setType, evolution, setEvolution, sort,
                 <FormControl
                     component="fieldset"
                 >
-                    <FormLabel component="legend">Sort</FormLabel>
+                    <FormLabel sx={{ color: "white", fontWeight: "bold" }} component="legend">Sort</FormLabel>
                     <RadioGroup
                         aria-label="sort"
                         name="sort"
@@ -250,21 +251,6 @@ export default function FilterBar({type, setType, evolution, setEvolution, sort,
                             label="Attack"
                         />
                     </RadioGroup>
-                </FormControl>
-                {/* Create another form control labelled "Other" with checkbox to view "Team" */}
-                <FormControl component="fieldset">
-                    <FormLabel component="legend">Other</FormLabel>
-                    <FormControlLabel
-                        control={
-                            <Checkbox
-                                checked={false}
-                                onChange={() => {}}
-                                name="team"
-                                color="primary"
-                            />
-                        }
-                        label="Team"
-                    />
                 </FormControl>
             </CardContent>
             <CardActions>
