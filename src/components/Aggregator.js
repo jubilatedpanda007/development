@@ -26,10 +26,10 @@ function Aggregator(props) {
                 </Typography>
                 {/* Aggregator Display */}
                 <Typography variant="body2" color="white">
-                    <b>Total HP:</b> {props.hp}
+                    <b style={{ color: "#78e9ff" }}>Total HP:</b> {props.hp}
                 </Typography>
                 <Typography variant="body2" color="white">
-                    <b>Total Attack:</b> {props.attack}
+                    <b style={{ color: "#78e9ff" }}>Total Attack:</b> {props.attack}
                 </Typography>
             </CardContent>
         </Card>

@@ -101,22 +101,81 @@ export default function FilterBar({type, setType, evolution, setEvolution, sort,
                     />
                 </FormControl> */}
                 <FormControl component="fieldset">
-                    {/* Make Label White */}
-                    <FormLabel component="legend" sx={{ color: "white", fontWeight: "bold" }}>Type</FormLabel>
+                    {/* Make Label White and when something in the form is selected, highlight light blue #78e9ff */}
+                    <FormLabel component="legend" sx={{ color: "white", fontWeight: "bold", 
+                    '&.Mui-focused': { color: "#78e9ff !important" } }}>Type</FormLabel>
+
                     <RadioGroup
                         aria-label="type"
                         name="type"
                         value={type}
                         onChange={handleChange}
                     >
-                        <FormControlLabel value="all" control={<Radio />} label="All" />
-                        <FormControlLabel value="grass" control={<Radio />} label="Grass" />
-                        <FormControlLabel value="poison" control={<Radio />} label="Poison" />
-                        <FormControlLabel value="fire" control={<Radio />} label="Fire" />
-                        <FormControlLabel value="flying" control={<Radio />} label="Flying" />
-                        <FormControlLabel value="water" control={<Radio />} label="Water" />
-                        <FormControlLabel value="bug" control={<Radio />} label="Bug" />
-                        <FormControlLabel value="normal" control={<Radio />} label="Normal" />
+                        {/* make radio color white, and selected a light red */}
+                        <FormControlLabel value="all" control={<Radio 
+                            sx={{
+                                color: "white",
+                                '&.Mui-checked': {
+                                    color: "#78e9ff",
+                                },
+                            }}
+                        />} label="All" />
+                        <FormControlLabel value="grass" control={<Radio 
+                            sx={{
+                                color: "white",
+                                '&.Mui-checked': {
+                                    color: "#78e9ff",
+                                },
+                            }}
+                        />} label="Grass" />
+                        <FormControlLabel value="poison" control={<Radio 
+                            sx={{
+                                color: "white",
+                                '&.Mui-checked': {
+                                    color: "#78e9ff",
+                                },
+                            }}
+                        />} label="Poison" />
+                        <FormControlLabel value="fire" control={<Radio 
+                            sx={{
+                                color: "white",
+                                '&.Mui-checked': {
+                                    color: "#78e9ff",
+                                },
+                            }}
+                        />} label="Fire" />
+                        <FormControlLabel value="flying" control={<Radio 
+                            sx={{
+                                color: "white",
+                                '&.Mui-checked': {
+                                    color: "#78e9ff",
+                                },
+                            }}
+                        />} label="Flying" />
+                        <FormControlLabel value="water" control={<Radio 
+                            sx={{
+                                color: "white",
+                                '&.Mui-checked': {
+                                    color: "#78e9ff",
+                                },
+                            }}
+                        />} label="Water" />
+                        <FormControlLabel value="bug" control={<Radio 
+                            sx={{
+                                color: "white",
+                                '&.Mui-checked': {
+                                    color: "#78e9ff",
+                                },
+                            }}
+                        />} label="Bug" />
+                        <FormControlLabel value="normal" control={<Radio 
+                            sx={{
+                                color: "white",
+                                '&.Mui-checked': {
+                                    color: "#78e9ff",
+                                },
+                            }}
+                        />} label="Normal" />
                     </RadioGroup>
                 </FormControl>
                 {/* filter based on evolution, base middle, final using Checkboxes */}
@@ -157,24 +216,54 @@ export default function FilterBar({type, setType, evolution, setEvolution, sort,
                     />
                 </FormControl> */}
                 <FormControl component="fieldset">
-                    <FormLabel sx={{ color: "white", fontWeight: "bold" }} component="legend">Evolution</FormLabel>
+                    <FormLabel component="legend" sx={{ color: "white", fontWeight: "bold", 
+                    '&.Mui-focused': { color: "#78e9ff !important" } }}>Evolution</FormLabel>
                     <RadioGroup
                         aria-label="evolution"
                         name="evolution"
                         value={evolution}
                         onChange={handleEvolutionChange}
                     >
-                        <FormControlLabel value="all" control={<Radio />} label="All" />
-                        <FormControlLabel value="base" control={<Radio />} label="Base" />
-                        <FormControlLabel value="middle" control={<Radio />} label="Middle" />
-                        <FormControlLabel value="final" control={<Radio />} label="Final" />
+                        <FormControlLabel value="all" control={<Radio 
+                            sx={{
+                                color: "white",
+                                '&.Mui-checked': {
+                                    color: "#78e9ff",
+                                },
+                            }}
+                        />} label="All" />
+                        <FormControlLabel value="base" control={<Radio 
+                            sx={{
+                                color: "white",
+                                '&.Mui-checked': {
+                                    color: "#78e9ff",
+                                },
+                            }}
+                        />} label="Base" />
+                        <FormControlLabel value="middle" control={<Radio 
+                            sx={{
+                                color: "white",
+                                '&.Mui-checked': {
+                                    color: "#78e9ff",
+                                },
+                            }}
+                        />} label="Middle" />
+                        <FormControlLabel value="final" control={<Radio 
+                            sx={{
+                                color: "white",
+                                '&.Mui-checked': {
+                                    color: "#78e9ff",
+                                },
+                            }}
+                        />} label="Final" />
                     </RadioGroup>
                 </FormControl>
 
                 <FormControl
                     component="fieldset"
                 >
-                    <FormLabel sx={{ color: "white", fontWeight: "bold" }} component="legend">Sort</FormLabel>
+                    <FormLabel component="legend" sx={{ color: "white", fontWeight: "bold", 
+                    '&.Mui-focused': { color: "#78e9ff !important" } }}>Sort</FormLabel>
                     <RadioGroup
                         aria-label="sort"
                         name="sort"
@@ -183,17 +272,38 @@ export default function FilterBar({type, setType, evolution, setEvolution, sort,
                     >
                         <FormControlLabel 
                             value="number" 
-                            control={<Radio />} 
+                            control={<Radio 
+                                sx={{
+                                    color: "white",
+                                    '&.Mui-checked': {
+                                        color: "#78e9ff",
+                                    },
+                                }}
+                            />} 
                             label="Number" 
                         />
                         <FormControlLabel
                             value="hp"
-                            control={<Radio />}
+                            control={<Radio 
+                                sx={{
+                                    color: "white",
+                                    '&.Mui-checked': {
+                                        color: "#78e9ff",
+                                    },
+                                }}
+                            />}
                             label="HP"
                         />
                         <FormControlLabel
                             value="attack"
-                            control={<Radio />}
+                            control={<Radio 
+                                sx={{
+                                    color: "white",
+                                    '&.Mui-checked': {
+                                        color: "#78e9ff",
+                                    },
+                                }}
+                            />}
                             label="Attack"
                         />
                     </RadioGroup>
