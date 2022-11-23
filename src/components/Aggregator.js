@@ -16,12 +16,13 @@ function Aggregator(props) {
             />
             <CardContent>
                 <Typography variant="body2" color="text.secondary">
-                    {/* loop through pokemon in team and output their images */}
-                    {props.team.map((pokemon) => {
-                        return (
-                            <img src={pokemon.image} alt={pokemon.name} />
-                        )
-                    })}
+                    <Box sx={{ display: 'flex', justifyContent: 'center', flexWrap: 'wrap' }}>
+                        {props.team.map((pokemon) => {
+                            return (
+                                <img src={pokemon.image} alt={pokemon.name} style={{ width: 100, height: 100, margin: 5 }} />
+                            )
+                        })}
+                    </Box>
                 </Typography>
                 {/* Aggregator Display */}
                 <Typography variant="body2" color="white">

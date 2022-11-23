@@ -1,45 +1,8 @@
-// mui card with check and radios for filtering and sorting respectively
-// we will filter on 2 categories type: grass, poison, fire, flying, water, bug, normal
-// and evolution stage: base, middle, final
-// we will sort based on hp and attack
 import React from "react";
-import { ThemeProvider, createTheme } from '@mui/material/styles';
 import Card from '@mui/material/Card';
 import { CardContent, CardActions, CardHeader, Checkbox, FormControlLabel, Radio, RadioGroup, FormControl, FormLabel, Button } from "@mui/material";
 
-const theme = createTheme({
-    palette: {
-        primary: {
-            main: '#2e7d32',
-        },
-        secondary: {
-            main: '#c62828',
-        },
-    },
-});
-
-// as props, takes in type, evolution
 export default function FilterBar({type, setType, evolution, setEvolution, sort, setSort}) {
-
-    // const [state, setState] = React.useState({
-    //     grass: false,
-    //     poison: false,
-    //     fire: false,
-    //     flying: false,
-    //     water: false,
-    //     bug: false,
-    //     normal: false,
-    // });
-
-
-    // create same state for evolution stage
-    // const [evolution, setEvolution] = React.useState({
-    //     base: false,
-    //     middle: false,
-    //     final: false,
-    // });
-
-    // const [evolution, setEvolution] = React.useState("base");
 
     const handleChange = (event) => {
         setType(event.target.value);
@@ -48,23 +11,6 @@ export default function FilterBar({type, setType, evolution, setEvolution, sort,
     const handleEvolutionChange = (event) => {
         setEvolution(event.target.value);
     };
-
-
-    // const handleChange = (event) => {
-    //     setState({ ...state, [event.target.name]: event.target.checked });
-    // };
-
-    // const { grass, poison, fire, flying, water, bug, normal } = state;
-    // const { base, middle, final } = evolution;
-    
-    // // filter based on base, middle, final evolution
-    // const handleEvolutionChange = (event) => {
-    //     setEvolution({ ...evolution, [event.target.name]: event.target.checked });
-    // };
-
-    // const error = [grass, poison, fire, flying, water, bug, normal].filter(
-    //     (v) => v
-    // ).length !== 2;
 
     const handleSortChange = (event) => {
         setSort(event.target.value);
