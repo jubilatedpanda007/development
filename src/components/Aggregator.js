@@ -11,25 +11,36 @@ import useMediaQuery from '@mui/material/useMediaQuery';
 function Aggregator(props) {
     return (
         <Card sx={{ width: 320, bgcolor: "grey.800", color: "white" }}>
-            <CardHeader sx={{ fontWeight: "bold" }}
-                title="My Pokémon Team"
+            <CardHeader 
+                title={ 
+                    <h4 style={{ fontWeight: "bold" }}>My Pokémon Team</h4>
+                }
             />
             <CardContent>
                 <Typography variant="body2" color="text.secondary">
                     <Box sx={{ display: 'flex', justifyContent: 'center', flexWrap: 'wrap' }}>
+                        {/* add each pokemon image in a gray card */}
                         {props.team.map((pokemon) => {
                             return (
-                                <img src={pokemon.image} alt={pokemon.name} style={{ width: 100, height: 100, margin: 5 }} />
+                                <Card sx={{ width: 100, height: 100, bgcolor: "grey.600", color: "white", margin: 1 }}>
+                                    <CardMedia
+                                        component="img"
+                                        height="100"
+                                        image={pokemon.image}
+                                        title={pokemon.name}
+                                        alt={pokemon.name}
+                                    />
+                                </Card>
                             )
                         })}
                     </Box>
                 </Typography>
                 {/* Aggregator Display */}
                 <Typography variant="body2" color="white">
-                    <b style={{ color: "#78e9ff" }}>Total HP:</b> {props.hp}
+                    <b style={{ color: "#73A5C6" }}>Total HP:</b> {props.hp}
                 </Typography>
                 <Typography variant="body2" color="white">
-                    <b style={{ color: "#78e9ff" }}>Total Attack:</b> {props.attack}
+                    <b style={{ color: "#73A5C6" }}>Total Attack:</b> {props.attack}
                 </Typography>
             </CardContent>
         </Card>

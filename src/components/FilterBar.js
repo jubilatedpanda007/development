@@ -18,7 +18,10 @@ export default function FilterBar({type, setType, evolution, setEvolution, sort,
 
     return (
         <Card sx={{ width: 320, bgcolor: "grey.800", color: "white", margin: "auto", marginBottom: "20px" }}>
-            <CardHeader title="Pokébar" />
+            <CardHeader title={ 
+                <h4 style={{ fontWeight: "bold" }}>Pokébar</h4>
+            }
+            />
             <CardContent>
                 {/* <FormControl component="fieldset">
                     <FormLabel component="legend">Type</FormLabel>
@@ -101,9 +104,9 @@ export default function FilterBar({type, setType, evolution, setEvolution, sort,
                     />
                 </FormControl> */}
                 <FormControl component="fieldset">
-                    {/* Make Label White and when something in the form is selected, highlight light blue #78e9ff */}
+                    {/* Make Label White and when something in the form is selected, highlight light blue #73A5C6 */}
                     <FormLabel component="legend" sx={{ color: "white", fontWeight: "bold", 
-                    '&.Mui-focused': { color: "#78e9ff !important" } }}>Type</FormLabel>
+                    '&.Mui-focused': { color: "#73A5C6 !important" } }}>Type</FormLabel>
 
                     <RadioGroup
                         aria-label="type"
@@ -116,7 +119,7 @@ export default function FilterBar({type, setType, evolution, setEvolution, sort,
                             sx={{
                                 color: "white",
                                 '&.Mui-checked': {
-                                    color: "#78e9ff",
+                                    color: "#73A5C6",
                                 },
                             }}
                         />} label="All" />
@@ -124,7 +127,7 @@ export default function FilterBar({type, setType, evolution, setEvolution, sort,
                             sx={{
                                 color: "white",
                                 '&.Mui-checked': {
-                                    color: "#78e9ff",
+                                    color: "#73A5C6",
                                 },
                             }}
                         />} label="Grass" />
@@ -132,7 +135,7 @@ export default function FilterBar({type, setType, evolution, setEvolution, sort,
                             sx={{
                                 color: "white",
                                 '&.Mui-checked': {
-                                    color: "#78e9ff",
+                                    color: "#73A5C6",
                                 },
                             }}
                         />} label="Poison" />
@@ -140,7 +143,7 @@ export default function FilterBar({type, setType, evolution, setEvolution, sort,
                             sx={{
                                 color: "white",
                                 '&.Mui-checked': {
-                                    color: "#78e9ff",
+                                    color: "#73A5C6",
                                 },
                             }}
                         />} label="Fire" />
@@ -148,7 +151,7 @@ export default function FilterBar({type, setType, evolution, setEvolution, sort,
                             sx={{
                                 color: "white",
                                 '&.Mui-checked': {
-                                    color: "#78e9ff",
+                                    color: "#73A5C6",
                                 },
                             }}
                         />} label="Flying" />
@@ -156,7 +159,7 @@ export default function FilterBar({type, setType, evolution, setEvolution, sort,
                             sx={{
                                 color: "white",
                                 '&.Mui-checked': {
-                                    color: "#78e9ff",
+                                    color: "#73A5C6",
                                 },
                             }}
                         />} label="Water" />
@@ -164,7 +167,7 @@ export default function FilterBar({type, setType, evolution, setEvolution, sort,
                             sx={{
                                 color: "white",
                                 '&.Mui-checked': {
-                                    color: "#78e9ff",
+                                    color: "#73A5C6",
                                 },
                             }}
                         />} label="Bug" />
@@ -172,7 +175,7 @@ export default function FilterBar({type, setType, evolution, setEvolution, sort,
                             sx={{
                                 color: "white",
                                 '&.Mui-checked': {
-                                    color: "#78e9ff",
+                                    color: "#73A5C6",
                                 },
                             }}
                         />} label="Normal" />
@@ -217,7 +220,7 @@ export default function FilterBar({type, setType, evolution, setEvolution, sort,
                 </FormControl> */}
                 <FormControl component="fieldset">
                     <FormLabel component="legend" sx={{ color: "white", fontWeight: "bold", 
-                    '&.Mui-focused': { color: "#78e9ff !important" } }}>Evolution</FormLabel>
+                    '&.Mui-focused': { color: "#73A5C6 !important" } }}>Evolution</FormLabel>
                     <RadioGroup
                         aria-label="evolution"
                         name="evolution"
@@ -228,7 +231,7 @@ export default function FilterBar({type, setType, evolution, setEvolution, sort,
                             sx={{
                                 color: "white",
                                 '&.Mui-checked': {
-                                    color: "#78e9ff",
+                                    color: "#73A5C6",
                                 },
                             }}
                         />} label="All" />
@@ -236,7 +239,7 @@ export default function FilterBar({type, setType, evolution, setEvolution, sort,
                             sx={{
                                 color: "white",
                                 '&.Mui-checked': {
-                                    color: "#78e9ff",
+                                    color: "#73A5C6",
                                 },
                             }}
                         />} label="Base" />
@@ -244,7 +247,7 @@ export default function FilterBar({type, setType, evolution, setEvolution, sort,
                             sx={{
                                 color: "white",
                                 '&.Mui-checked': {
-                                    color: "#78e9ff",
+                                    color: "#73A5C6",
                                 },
                             }}
                         />} label="Middle" />
@@ -252,7 +255,7 @@ export default function FilterBar({type, setType, evolution, setEvolution, sort,
                             sx={{
                                 color: "white",
                                 '&.Mui-checked': {
-                                    color: "#78e9ff",
+                                    color: "#73A5C6",
                                 },
                             }}
                         />} label="Final" />
@@ -263,7 +266,7 @@ export default function FilterBar({type, setType, evolution, setEvolution, sort,
                     component="fieldset"
                 >
                     <FormLabel component="legend" sx={{ color: "white", fontWeight: "bold", 
-                    '&.Mui-focused': { color: "#78e9ff !important" } }}>Sort</FormLabel>
+                    '&.Mui-focused': { color: "#73A5C6 !important" } }}>Sort</FormLabel>
                     <RadioGroup
                         aria-label="sort"
                         name="sort"
@@ -276,7 +279,7 @@ export default function FilterBar({type, setType, evolution, setEvolution, sort,
                                 sx={{
                                     color: "white",
                                     '&.Mui-checked': {
-                                        color: "#78e9ff",
+                                        color: "#73A5C6",
                                     },
                                 }}
                             />} 
@@ -288,7 +291,7 @@ export default function FilterBar({type, setType, evolution, setEvolution, sort,
                                 sx={{
                                     color: "white",
                                     '&.Mui-checked': {
-                                        color: "#78e9ff",
+                                        color: "#73A5C6",
                                     },
                                 }}
                             />}
@@ -300,7 +303,7 @@ export default function FilterBar({type, setType, evolution, setEvolution, sort,
                                 sx={{
                                     color: "white",
                                     '&.Mui-checked': {
-                                        color: "#78e9ff",
+                                        color: "#73A5C6",
                                     },
                                 }}
                             />}

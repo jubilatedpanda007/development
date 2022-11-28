@@ -6,6 +6,7 @@ import { CgPokemon } from 'react-icons/cg';
 import {IoIosWater} from 'react-icons/io'
 import {GiHighGrass} from 'react-icons/gi';
 import {MdBubbleChart} from 'react-icons/md';
+import {GiFluffyWing} from 'react-icons/gi';
 import {AiFillFire, AiFillBug, AiFillStar} from 'react-icons/ai';
 import { MdOutlineCatchingPokemon } from 'react-icons/md';
 import { red, green, blue, purple, yellow, grey, lightBlue } from '@mui/material/colors';
@@ -29,8 +30,12 @@ function PokemonCard(props) {
     }, [props.team, props.pokemon]);
     
     return (
-        // set card width to 320px, and height to 400px
-        <Card sx={{ width: 320, height: 500, bgcolor: "grey.800", color: "white" }}>
+        // set card width to 320px, and height to 400px, highlight on hover
+        <Card sx={{ width: 320, height: 500, bgcolor: "grey.800", color: "white",
+            '&:hover': {
+                bgcolor: "grey.700",
+            },
+        }}>
             <CardMedia
                 component="img"
                 height="250"
@@ -113,6 +118,16 @@ function PokemonCard(props) {
                                 color="primary"
                                 sx={{ bgcolor: grey[600], margin: 0.5, textColor: "white" }}
                                 icon={<AiFillStar />}
+                                size="small"
+                            />
+                        );
+                    } else if (type === 'flying') {
+                        return (
+                            <Chip
+                                label={type}
+                                color="primary"
+                                sx={{ bgcolor: lightBlue[500], margin: 0.5, textColor: "white" }}
+                                icon={<GiFluffyWing />}
                                 size="small"
                             />
                         );
