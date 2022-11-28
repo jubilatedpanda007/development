@@ -23,86 +23,6 @@ export default function FilterBar({type, setType, evolution, setEvolution, sort,
             }
             />
             <CardContent>
-                {/* <FormControl component="fieldset">
-                    <FormLabel component="legend">Type</FormLabel>
-                    <FormControlLabel
-                        control={
-                            <Checkbox
-                                checked={grass}
-                                onChange={handleChange}
-                                name="grass"
-                                color="primary"
-                            />
-                        }
-                        label="Grass"
-                    />
-                    <FormControlLabel
-                        control={
-                            <Checkbox
-                                checked={poison}
-                                onChange={handleChange}
-                                name="poison"
-                                color="primary"
-                            />
-                        }
-                        label="Poison"
-                    />
-                    <FormControlLabel
-                        control={
-                            <Checkbox
-                                checked={fire}
-                                onChange={handleChange}
-                                name="fire"
-                                color="primary"
-                            />
-                        }
-                        label="Fire"
-                    />
-                    <FormControlLabel
-                        control={
-                            <Checkbox
-                                checked={flying}
-                                onChange={handleChange}
-                                name="flying"
-                                color="primary"
-                            />
-                        }
-                        label="Flying"
-                    />
-                    <FormControlLabel
-                        control={
-                            <Checkbox
-                                checked={water}
-                                onChange={handleChange}
-                                name="water"
-                                color="primary"
-                            />
-                        }
-                        label="Water"
-                    />
-                    <FormControlLabel
-                        control={
-                            <Checkbox
-                                checked={bug}
-                                onChange={handleChange}
-                                name="bug"
-                                color="primary"
-                            />
-                        }
-                        label="Bug"
-                    />
-                    <FormControlLabel
-                        control={
-                            <Checkbox
-                                checked={normal}
-                                onChange={handleChange}
-                                name="normal"
-                                color="primary"
-                            />
-                        }
-                        label="Normal"
-                    />
-                </FormControl> */}
                 <FormControl component="fieldset">
                     {/* Make Label White and when something in the form is selected, highlight light blue #73A5C6 */}
                     <FormLabel component="legend" sx={{ color: "white", fontWeight: "bold", 
@@ -313,7 +233,7 @@ export default function FilterBar({type, setType, evolution, setEvolution, sort,
                 </FormControl>
             </CardContent>
             <CardActions>
-                    {/* button that resets values, type set to "all", evolution set to "all", sort set to "number" */}
+                {/* button that resets values, type set to "all", evolution set to "all", sort set to "number" */}
                 <Button
                     variant="contained"
                     color="primary"

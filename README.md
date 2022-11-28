@@ -1,7 +1,18 @@
 # Development
 
+Describe the goal of the application and value to a user
+Link to your deployed web application running online
+Explain the organization of your Components, and the props and state related to them
+Note the usability principles considered for layout and hierarchy
+
+<!-- center public/images/Pokemon_animated.webp -->
+<p align="center">
+  <img src="public/images/Pokemon_animated.webp" alt="animated" />
+</p>
+
+
 ### Link to Deployed Website
-If you used the stencil code, this is `https://<your GitHub username>.github.io/<name of your repository>`
+The deployed website can be found [here](https://jubilatedpanda007.github.io/development)!
 
 ### Goal and Value of the Application
 

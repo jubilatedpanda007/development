@@ -18,10 +18,8 @@ import useMediaQuery from '@mui/material/useMediaQuery';
 
 function PokemonCard(props) {
 
-    // takes in a togglePokemon function, which will add or remove the pokemon from the team
-    // check if pokemon is in team, if it is, set the button to "Remove from Team", if not, set the button to "Add to Team"
-    // team is passed in as a list of pokemon names
-    const [isInTeam, setIsInTeam] = useState(props.team.includes(props.name));
+    // state for pokemon in team
+    const [isInTeam, setIsInTeam] = useState(props.team.includes(props.pokemon.name));
 
     // on each re-render, check if pokemon is in team, if it is, set the button to "Remove from Team", if not, set the button to "Add to Team"
     // team is passed in as a list of pokemon names
@@ -40,26 +38,27 @@ function PokemonCard(props) {
                 component="img"
                 height="250"
                 image={props.pokemon.image}
-                title={props.name}
-                alt={props.name}
+                title={props.pokemon.name}
+                alt={props.pokemon.name}
             />
             <CardContent>
                 <Typography gutterBottom variant="h5" component="div" color="white">
-                    {props.name}
+                    {props.pokemon.name}
                 </Typography>
                 <Typography variant="body2" color="text.secondary" color="white">
-                    <b>Number:</b> {props.number}
+                    <b>Number:</b> {props.pokemon.number}
                 </Typography>
                 <Typography variant="body2" color="text.secondary" color="white">
-                    <b>HP:</b> {props.hp}
+                    <b>HP:</b> {props.pokemon.hp}
                 </Typography>
                 <Typography variant="body2" color="text.secondary" color="white">
-                    <b>Attack:</b> {props.attack}
+                    <b>Attack:</b> {props.pokemon.attack}
                 </Typography>
                 <Typography variant="body2" color="text.secondary" color="white">
                     <b>Types:</b>
                 </Typography>
-                {props.types.map((type) => {
+                {/* Color of chip depends on type */}
+                {props.pokemon.types.map((type) => {
                     if (type === 'grass') {
                         return (
                             <Chip
